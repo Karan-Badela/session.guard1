@@ -1,0 +1,147 @@
+:root {
+  --bg-light: #f9f9f9;
+  --bg-dark: #121212;
+  --card-light: #ffffff;
+  --card-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #f0f0f0;
+  --accent: #ff6b6b;
+  --accent-light: #f0932b;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: all 0.4s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-light);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: background-color 0.4s ease;
+}
+
+body.dark .card {
+  background-color: var(--card-dark);
+}
+
+.title {
+  font-size: 2.4rem;
+  color: var(--accent);
+  animation: popin 0.8s ease forwards;
+}
+
+.subtext {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  color: inherit;
+  animation: fadein 1s ease forwards;
+}
+
+.input {
+  margin: 25px 0;
+  padding: 12px;
+  width: 90%;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.input:focus {
+  border-color: var(--accent-light);
+  outline: none;
+  box-shadow: 0 0 8px rgba(240, 147, 43, 0.4);
+}
+
+.support {
+  font-weight: 600;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.call {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  color: inherit;
+}
+
+.call a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.toggle-mode {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border: none;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-mode:hover {
+  background-color: #e74c3c;
+}
+
+/* Animations */
+.animated-entry {
+  animation: slideIn 0.9s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popin {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
